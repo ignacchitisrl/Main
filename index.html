@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ignacchiti Francesco S.R.L. — Conglomerati cementizi e bituminosi, opere stradali</title>
+<meta name="description" content="Ignacchiti Francesco S.R.L. — Praia a Mare (CS) e Maratea (PZ). Produzione conglomerati bituminosi e cementizi, costruzione e manutenzione strade. Certificata ISO 9001, ISO 14001, ISO 45001, SOA OG3 III-bis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --asfalto:#17150F;
+    --asfalto2:#211E17;
+    --cemento:#8A8172;
+    --cemento-chiaro:#C9C2B4;
+    --ambra:#C9962C;
+    --ambra-scuro:#9C7220;
+    --rosso:#A6362A;
+    --carta:#F3EFE4;
+    --carta2:#EAE4D4;
+    --riga:#3A362B;
+    --riga-chiara:#D8D1BF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--carta);
+    color:var(--asfalto);
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4,.disp{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    font-weight:600;
+    color:var(--asfalto);
+  }
+  a{color:inherit;}
+  img{display:block;max-width:100%;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+  @media(max-width:640px){.wrap{padding:0 20px;}}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(23,21,15,0.92);
+    border-bottom:1px solid rgba(201,150,44,0.35);
+    backdrop-filter:blur(6px);
+  }
+  .navrow{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 28px;max-width:1120px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .brand img{height:40px;width:auto;}
+  .brand-text{color:var(--carta);font-family:'Oswald',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.03em;line-height:1.2;}
+  .brand-text span{display:block;font-size:10.5px;color:var(--ambra);font-weight:500;letter-spacing:0.08em;}
+  nav ul{list-style:none;display:flex;gap:28px;}
+  nav a{color:var(--cemento-chiaro);text-decoration:none;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;font-weight:500;transition:color .15s;}
+  nav a:hover{color:var(--ambra);}
+  .nav-toggle{display:none;background:none;border:none;color:var(--carta);font-size:26px;cursor:pointer;}
+  @media(max-width:820px){
+    nav{position:fixed;top:64px;left:0;right:0;background:var(--asfalto);border-bottom:1px solid rgba(201,150,44,.35);max-height:0;overflow:hidden;transition:max-height .25s ease;}
+    nav.open{max-height:400px;}
+    nav ul{flex-direction:column;gap:0;padding:8px 28px 20px;}
+    nav a{display:block;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;min-height:100svh;display:flex;align-items:flex-end;
+    background:linear-gradient(180deg, rgba(23,21,15,0.55) 0%, rgba(23,21,15,0.35) 35%, rgba(17,15,10,0.94) 92%), url('assets/mezzi-fila.jpg') center 62%/cover no-repeat;
+  }
+  .hero-inner{padding:160px 28px 64px;max-width:1120px;margin:0 auto;width:100%;}
+  .hero-eyebrow{color:var(--ambra);font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+  .hero-eyebrow::before{content:"";width:34px;height:2px;background:var(--ambra);display:inline-block;}
+  h1.hero-title{
+    color:var(--carta);
+    font-size:clamp(38px,6.2vw,74px);
+    line-height:1.02;
+    max-width:820px;
+    font-weight:700;
+  }
+  h1.hero-title em{color:var(--ambra);font-style:normal;}
+  .hero-sub{
+    color:var(--cemento-chiaro);
+    font-family:'Source Serif 4',serif;
+    font-size:19px;max-width:560px;margin-top:22px;
+  }
+  .hero-cta{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:14px 26px;font-family:'Oswald',sans-serif;font-size:13.5px;
+    letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;font-weight:600;
+    border:1.5px solid transparent;transition:all .15s;
+  }
+  .btn-primary{background:var(--ambra);color:var(--asfalto);}
+  .btn-primary:hover{background:#DFAA3E;}
+  .btn-ghost{border-color:rgba(243,239,228,0.4);color:var(--carta);}
+  .btn-ghost:hover{border-color:var(--ambra);color:var(--ambra);}
+
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(243,239,228,0.18);
+    margin-top:52px;padding-top:28px;max-width:900px;
+  }
+  .stat b{display:block;color:var(--ambra);font-family:'Oswald',sans-serif;font-size:clamp(24px,3vw,34px);font-weight:600;}
+  .stat span{color:var(--cemento-chiaro);font-size:12.5px;text-transform:uppercase;letter-spacing:0.06em;font-family:'Oswald',sans-serif;}
+  @media(max-width:700px){.hero-stats{grid-template-columns:repeat(2,1fr);row-gap:24px;}}
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:96px 0;}
+  .eyebrow{
+    color:var(--ambra-scuro);font-family:'Oswald',sans-serif;font-size:12.5px;letter-spacing:0.14em;
+    text-transform:uppercase;margin-bottom:14px;font-weight:600;
+  }
+  h2.h-title{font-size:clamp(28px,3.6vw,42px);max-width:640px;margin-bottom:6px;}
+  .section-head{margin-bottom:52px;}
+  .section-head p{color:#4A4535;max-width:620px;margin-top:14px;font-size:16.5px;}
+
+  /* ---------- CHI SIAMO ---------- */
+  #azienda{background:var(--carta);}
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:start;}
+  .about-grid p{color:#332F24;margin-bottom:18px;font-size:16.5px;}
+  .about-grid p:last-child{margin-bottom:0;}
+  .symbol-block{
+    border:1px solid var(--riga-chiara);background:var(--carta2);padding:38px 34px;
+    display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;
+  }
+  .symbol-block img{width:96px;height:auto;}
+  .symbol-block .quote{font-family:'Source Serif 4',serif;font-style:italic;font-size:18px;color:var(--asfalto2);}
+  .symbol-block .quote-attr{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ambra-scuro);}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:36px;}}
+
+  /* ---------- STORIA ---------- */
+  #storia{background:var(--asfalto);color:var(--carta);}
+  #storia .eyebrow{color:var(--ambra);}
+  #storia h2.h-title{color:var(--carta);}
+  #storia .section-head p{color:var(--cemento-chiaro);}
+  .storia-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(243,239,228,0.14);border:1px solid rgba(243,239,228,0.14);}
+  .storia-item{position:relative;overflow:hidden;background:#000;aspect-ratio:4/3;}
+  .storia-item img{width:100%;height:100%;object-fit:cover;filter:sepia(28%) contrast(1.02);transition:transform .4s ease;}
+  .storia-item:hover img{transform:scale(1.04);}
+  .storia-cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(0deg,rgba(0,0,0,0.75),transparent);font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:0.04em;color:var(--cemento-chiaro);text-transform:uppercase;}
+  @media(max-width:760px){.storia-strip{grid-template-columns:1fr;}}
+
+  /* ---------- IMPIANTO ---------- */
+  #impianto{
+    position:relative;min-height:78vh;display:flex;align-items:flex-end;
+    background:linear-gradient(180deg, rgba(23,21,15,0.25) 0%, rgba(17,15,10,0.35) 45%, rgba(15,13,9,0.94) 100%), url('assets/impianto-aereo.jpg') center 45%/cover no-repeat;
+    padding:0;
+  }
+  .impianto-inner{padding:70px 28px 64px;max-width:1120px;margin:0 auto;width:100%;}
+  .impianto-inner .eyebrow{color:var(--ambra);}
+  .impianto-inner h2{color:var(--carta);font-size:clamp(26px,3.6vw,42px);max-width:600px;}
+  .impianto-inner p{color:var(--cemento-chiaro);max-width:520px;margin-top:16px;font-size:16px;}
+
+  /* ---------- SERVIZI ---------- */
+  #servizi{background:var(--asfalto);color:var(--carta);}
+  #servizi .eyebrow{color:var(--ambra);}
+  #servizi h2.h-title{color:var(--carta);}
+  #servizi .section-head p{color:var(--cemento-chiaro);}
+  .serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(243,239,228,0.14);border:1px solid rgba(243,239,228,0.14);}
+  .serv-card{background:var(--asfalto);padding:34px 30px;min-height:220px;display:flex;flex-direction:column;}
+  .serv-num{font-family:'Oswald',sans-serif;color:var(--ambra);font-size:13px;letter-spacing:0.08em;margin-bottom:20px;}
+  .serv-card h3{color:var(--carta);font-size:19px;margin-bottom:12px;text-transform:none;letter-spacing:0;}
+  .serv-card p{color:var(--cemento-chiaro);font-size:14.5px;font-family:'Source Serif 4',serif;}
+  @media(max-width:820px){.serv-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.serv-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CERTIFICAZIONI ---------- */
+  #certificazioni{background:var(--carta2);border-top:1px solid var(--riga-chiara);border-bottom:1px solid var(--riga-chiara);}
+  .cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--riga-chiara);}
+  .cert-card{
+    background:var(--carta);padding:30px 24px;border-right:1px solid var(--riga-chiara);
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .cert-card:last-child{border-right:none;}
+  .cert-tag{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.1em;color:var(--carta);background:var(--rosso);align-self:flex-start;padding:4px 9px;text-transform:uppercase;}
+  .cert-tag.gold{background:var(--ambra-scuro);}
+  .cert-card h3{font-size:20px;margin-top:2px;}
+  .cert-card p{font-size:14px;color:#4A4535;font-family:'Source Serif 4',serif;}
+  .cert-card .num{font-family:'Oswald',sans-serif;font-size:12px;color:var(--cemento);letter-spacing:0.02em;}
+  .cert-dl{margin-top:auto;font-family:'Oswald',sans-serif;font-size:12.5px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ambra-scuro);text-decoration:none;border-bottom:1px solid var(--ambra-scuro);align-self:flex-start;padding-bottom:2px;}
+  .cert-dl:hover{color:var(--rosso);border-color:var(--rosso);}
+  @media(max-width:900px){.cert-grid{grid-template-columns:1fr 1fr;}.cert-card{border-bottom:1px solid var(--riga-chiara);}}
+  @media(max-width:560px){.cert-grid{grid-template-columns:1fr;}}
+
+  .soa-strip{margin-top:40px;border:1px solid var(--riga-chiara);background:var(--carta);padding:26px 30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .soa-strip .left{display:flex;align-items:center;gap:20px;}
+  .soa-code{font-family:'Oswald',sans-serif;font-size:34px;color:var(--ambra-scuro);font-weight:700;border:2px solid var(--ambra-scuro);padding:6px 16px;line-height:1;}
+  .soa-strip h4{font-size:16px;text-transform:none;letter-spacing:0;}
+  .soa-strip p{font-size:14px;color:#4A4535;font-family:'Source Serif 4',serif;}
+
+  /* ---------- MEZZI ---------- */
+  #mezzi{background:var(--asfalto2);color:var(--carta);}
+  #mezzi .eyebrow{color:var(--ambra);}
+  #mezzi h2.h-title{color:var(--carta);}
+  #mezzi .section-head p{color:var(--cemento-chiaro);}
+  .mezzi-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .mezzi-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(243,239,228,0.16);}
+  .mezzi-list li{padding:13px 0;border-bottom:1px solid rgba(243,239,228,0.16);font-size:14.5px;color:var(--cemento-chiaro);font-family:'Source Serif 4',serif;padding-right:16px;}
+  .mezzi-list li::before{content:"— ";color:var(--ambra);}
+  .mezzi-img{border:1px solid rgba(243,239,228,0.16);}
+  .mezzi-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(10%);}
+  @media(max-width:820px){.mezzi-layout{grid-template-columns:1fr;gap:32px;}.mezzi-list{grid-template-columns:1fr;}}
+
+  /* ---------- OBIETTIVI ---------- */
+  #obiettivi{background:var(--carta);}
+  .obi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+  .obi-card{border-top:3px solid var(--ambra);padding-top:20px;}
+  .obi-card h3{font-size:18px;text-transform:none;letter-spacing:0;margin-bottom:10px;}
+  .obi-card p{font-size:15px;color:#4A4535;}
+  @media(max-width:820px){.obi-grid{grid-template-columns:1fr;gap:32px;}}
+
+  /* ---------- LAVORA CON NOI ---------- */
+  #lavora{background:var(--asfalto2);color:var(--carta);}
+  #lavora .eyebrow{color:var(--ambra);}
+  #lavora h2.h-title{color:var(--carta);}
+  #lavora .section-head p{color:var(--cemento-chiaro);}
+  .job-layout{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start;}
+  .job-side p{color:var(--cemento-chiaro);font-size:16px;margin-bottom:20px;}
+  .job-side ul{list-style:none;}
+  .job-side li{padding:10px 0;border-top:1px solid rgba(243,239,228,0.16);font-size:14.5px;color:var(--cemento-chiaro);}
+  .job-side li:last-child{border-bottom:1px solid rgba(243,239,228,0.16);}
+  .job-side li b{color:var(--ambra);font-weight:600;}
+  .job-form{border:1px solid rgba(243,239,228,0.2);background:rgba(243,239,228,0.03);padding:34px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-family:'Oswald',sans-serif;font-size:11.5px;letter-spacing:0.07em;text-transform:uppercase;color:var(--cemento-chiaro);margin-bottom:7px;}
+  .field input[type=text],.field input[type=email],.field input[type=tel],.field select,.field textarea{
+    width:100%;background:var(--asfalto);border:1px solid rgba(243,239,228,0.25);color:var(--carta);
+    padding:11px 13px;font-family:'Source Serif 4',serif;font-size:15px;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ambra);}
+  .field textarea{resize:vertical;min-height:90px;}
+  .job-note{font-size:12.5px;color:var(--cemento);margin-top:16px;font-family:'Source Serif 4',serif;}
+  .privacy-row{display:flex;gap:10px;align-items:flex-start;margin:18px 0 22px;}
+  .privacy-row input{margin-top:4px;}
+  .privacy-row label{font-size:13px;color:var(--cemento-chiaro);font-family:'Source Serif 4',serif;}
+  @media(max-width:820px){.job-layout{grid-template-columns:1fr;gap:32px;}.form-row{grid-template-columns:1fr;}.job-form{padding:24px;}}
+
+  /* ---------- CONTATTI / FOOTER ---------- */
+  #contatti{background:var(--asfalto);color:var(--carta);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .contact-grid h2.h-title{color:var(--carta);}
+  .contact-block{margin-bottom:30px;}
+  .contact-block h4{font-size:13px;color:var(--ambra);letter-spacing:0.08em;margin-bottom:10px;}
+  .contact-block p, .contact-block a{font-size:15.5px;color:var(--cemento-chiaro);font-family:'Source Serif 4',serif;text-decoration:none;display:block;margin-bottom:4px;}
+  .contact-block a:hover{color:var(--ambra);}
+  .site-box{border:1px solid rgba(243,239,228,0.2);padding:26px;margin-bottom:18px;}
+  .site-box h4{font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:0.04em;color:var(--carta);margin-bottom:6px;text-transform:none;}
+  .site-box p{color:var(--cemento-chiaro);font-size:14px;}
+  footer{border-top:1px solid rgba(243,239,228,0.14);margin-top:80px;padding-top:28px;padding-bottom:36px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  footer p{font-size:12.5px;color:var(--cemento);font-family:'Oswald',sans-serif;letter-spacing:0.03em;}
+
+  ::selection{background:var(--ambra);color:var(--asfalto);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="navrow">
+    <a class="brand" href="#top">
+      <img src="assets/simbolo.png" alt="Simbolo Ignacchiti Francesco">
+      <span class="brand-text">IGNACCHITI FRANCESCO<span>Conglomerati · Cementizi · Bituminosi</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Apri menu">☰</button>
+    <nav id="nav">
+      <ul>
+        <li><a href="#azienda">Azienda</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#certificazioni">Certificazioni</a></li>
+        <li><a href="#mezzi">Mezzi</a></li>
+        <li><a href="#lavora">Lavora con noi</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="top"></div>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Praia a Mare (CS) — Maratea (PZ), dal 2006</div>
+    <h1 class="hero-title">Costruiamo le strade <em>su cui si muove</em> il territorio.</h1>
+    <p class="hero-sub">Produzione di conglomerati bituminosi e cementizi, costruzione e manutenzione di strade, opere di urbanizzazione. Qualificati SOA, certificati ISO 9001 · 14001 · 45001.</p>
+    <div class="hero-cta">
+      <a href="#contatti" class="btn btn-primary">Richiedi un contatto</a>
+      <a href="#certificazioni" class="btn btn-ghost">Vedi le certificazioni</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>2006</b><span>Anno di fondazione</span></div>
+      <div class="stat"><b>10–15</b><span>Unità specializzate</span></div>
+      <div class="stat"><b>OG3 III-bis</b><span>Qualificazione SOA</span></div>
+      <div class="stat"><b>Italia</b><span>Operatività nazionale</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="azienda">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Chi siamo</div>
+      <h2 class="h-title">Vent'anni di esperienza in lavori pubblici e stradali</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>Ignacchiti Francesco S.R.L. nasce nel 2006, costituita da soci fondatori e da un amministratore con esperienza più che ventennale nel settore dei lavori pubblici, dei lavori stradali, delle opere di urbanizzazione e della fornitura di conglomerati cementizi.</p>
+        <p>Disponiamo di una rilevante struttura operativa, con sedi dotate di impianti propri per la produzione di conglomerati bituminosi e cementizi, di moderni mezzi di trasporto e macchine operatrici. Il nostro organico, tra le 10 e le 15 unità altamente specializzate, ci consente risultati di produzione superiori alla media dei diretti concorrenti, con quotazioni competitive, operando su tutto il territorio nazionale.</p>
+        <p>La caratteristica che ci contraddistingue è l'affidabilità e la correttezza nello svolgere la nostra attività: alla competenza professionale affianchiamo una solida conoscenza normativa, garantendo gli standard di qualità richiesti nella progettazione, nella realizzazione e nella manutenzione di ogni opera.</p>
+      </div>
+      <div class="symbol-block">
+        <img src="assets/simbolo.png" alt="Simbolo aziendale">
+        <p class="quote">"Serietà e professionalità, garantendo affidabilità per tutti i nostri prodotti e servizi."</p>
+        <p class="quote-attr">Ignacchiti Francesco S.R.L.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="storia">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Le nostre origini</div>
+      <h2 class="h-title">Una storia che viene da lontano</h2>
+      <p>Custodiamo con cura le immagini che raccontano gli inizi della nostra attività tra cave, impianti e cantieri, ben prima della costituzione della società nel 2006. Radici che oggi si riflettono nell'esperienza e nella competenza di tutto il nostro team.</p>
+    </div>
+  </div>
+  <div class="storia-strip">
+    <div class="storia-item"><img src="assets/storia-2.jpg" alt="Impianto storico di lavorazione inerti"><div class="storia-cap">Impianto di selezione inerti</div></div>
+    <div class="storia-item"><img src="assets/storia-3.jpg" alt="Vallata con impianto e viadotto"><div class="storia-cap">Accesso al cantiere con la SS585 ancora non asfaltata</div></div>
+    <div class="storia-item"><img src="assets/storia-1.jpg" alt="Mezzi storici al piazzale"><div class="storia-cap">Impianto di produzione storico</div></div>
+  </div>
+</section>
+
+<section id="impianto">
+  <div class="impianto-inner">
+    <div class="eyebrow">L'impianto</div>
+    <h2>Produzione propria di conglomerati</h2>
+    <p>Il nostro impianto, produce ogni giorno i conglomerati bituminosi e cementizi che portiamo nei cantieri: qualità controllata dalla cava alla strada.</p>
+  </div>
+</section>
+
+<section id="servizi">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Settori operativi</div>
+      <h2 class="h-title">Una gamma completa di servizi, cura tecnica e alta qualità</h2>
+      <p>Dalla produzione dei materiali alla posa in opera: seguiamo il lavoro dalla progettazione all'esecuzione, dalla produzione al post vendita.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card">
+        <div class="serv-num">01</div>
+        <h3>Conglomerati bituminosi e cementizi</h3>
+        <p>Produzione e vendita di conglomerati bituminosi, cementizi e manufatti in cemento tramite impianti propri.</p>
+      </div>
+      <div class="serv-card">
+        <div class="serv-num">02</div>
+        <h3>Costruzioni civili e industriali</h3>
+        <p>Case per civile abitazione, immobili commerciali e industriali, strutture turistico-ricettive, con impianti elettrici, idrici, gas, riscaldamento e antincendio.</p>
+      </div>
+      <div class="serv-card">
+        <div class="serv-num">03</div>
+        <h3>Strade e infrastrutture</h3>
+        <p>Costruzione, ristrutturazione e manutenzione di strade, autostrade, ponti, viadotti, gallerie, pavimentazioni speciali, rilevati aeroportuali e ferroviari.</p>
+      </div>
+      <div class="serv-card">
+        <div class="serv-num">04</div>
+        <h3>Opere idrauliche</h3>
+        <p>Acquedotti, gasdotti, oleodotti, opere marittime e fluviali, di difesa e sistemazione idraulica, impianti di irrigazione, sollevamento, potabilizzazione e depurazione.</p>
+      </div>
+      <div class="serv-card">
+        <div class="serv-num">05</div>
+        <h3>Movimento terra</h3>
+        <p>Attività di movimento terra, demolizione, sterro, sistemazione agraria e forestale, impermeabilizzazione dei terreni.</p>
+      </div>
+      <div class="serv-card">
+        <div class="serv-num">06</div>
+        <h3>Segnaletica e carpenteria</h3>
+        <p>Installazione e manutenzione di segnaletica stradale, posa di elementi prefabbricati, strutture in cemento armato e carpenteria metallica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certificazioni">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Certificazioni</div>
+      <h2 class="h-title">Qualità, ambiente e sicurezza certificate</h2>
+      <p>I nostri sistemi di gestione sono certificati da Transpacific Certifications Limited (accreditamento IAF / JAS-ANZ) per il settore "Manutenzione di strade".</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <span class="cert-tag">ISO 9001:2015</span>
+        <h3>Qualità</h3>
+        <p>Sistema di gestione per la qualità certificato per la manutenzione di strade.</p>
+        <p class="num">Cert. n° 18316 — valido fino al 26/05/2027</p>
+        <a class="cert-dl" href="assets/ISO_9001.pdf" target="_blank">Scarica il certificato</a>
+      </div>
+      <div class="cert-card">
+        <span class="cert-tag">ISO 14001:2015</span>
+        <h3>Ambiente</h3>
+        <p>Sistema di gestione ambientale certificato per la manutenzione di strade.</p>
+        <p class="num">Cert. n° E4072 — valido fino al 26/05/2027</p>
+        <a class="cert-dl" href="assets/ISO_14001.pdf" target="_blank">Scarica il certificato</a>
+      </div>
+      <div class="cert-card">
+        <span class="cert-tag">ISO 45001:2018</span>
+        <h3>Sicurezza</h3>
+        <p>Sistema di gestione per la salute e sicurezza sul lavoro certificato per la manutenzione di strade.</p>
+        <p class="num">Cert. n° O-3122 — valido fino al 26/05/2027</p>
+        <a class="cert-dl" href="assets/ISO_45001.pdf" target="_blank">Scarica il certificato</a>
+      </div>
+      <div class="cert-card">
+        <span class="cert-tag gold">SOA</span>
+        <h3>Qualificazione lavori pubblici</h3>
+        <p>Attestazione di qualificazione all'esecuzione di lavori pubblici, categoria OG3 (strade, autostrade, ponti, viadotti, ferrovie, metropolitane).</p>
+        <p class="num">Class. III-bis — scadenza quinquennale 05/06/2029</p>
+        <a class="cert-dl" href="assets/SOA.pdf" target="_blank">Scarica l'attestazione</a>
+      </div>
+    </div>
+    <div class="soa-strip">
+      <div class="left">
+        <div class="soa-code">OG3</div>
+        <div>
+          <h4>Strade, autostrade, ponti, viadotti, ferrovie, metropolitane</h4>
+          <p>Classifica III-bis — importo di qualificazione fino a € 1.500.000. Rilasciata da SOA Group SPA il 06/06/2024.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mezzi">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Risorse e attrezzature</div>
+      <h2 class="h-title">Un parco mezzi pronto per ogni cantiere</h2>
+      <p>Numerosi investimenti in attrezzature, macchinari specifici e automezzi, affiancati da personale in continua formazione su sicurezza e normative antincendio.</p>
+    </div>
+    <div class="mezzi-layout">
+      <ul class="mezzi-list">
+        <li>Impianti di produzione conglomerati bituminosi</li>
+        <li>Impianti di produzione conglomerati cementizi</li>
+        <li>Autocarri cassonati 3 assi</li>
+        <li>Autocarri cassonati 4 assi</li>
+        <li>Autocarri 35 q.li e 65 q.li</li>
+        <li>Pale meccaniche gommate e cingolate</li>
+        <li>Mini pale gommate e cingolate</li>
+        <li>Mini escavatori ed escavatori</li>
+        <li>Autobetoniere</li>
+        <li>Pompe per calcestruzzo</li>
+        <li>Vibrofinitrici</li>
+        <li>Rulli compattatori</li>
+        <li>Carrelloni a rimorchio</li>
+      </ul>
+      <div class="mezzi-img"><img src="assets/cantiere6.jpg" alt="Mezzo al lavoro su strada in costruzione"></div>
+    </div>
+  </div>
+</section>
+
+<section id="obiettivi">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">I nostri obiettivi</div>
+      <h2 class="h-title">Verso i clienti, e verso il futuro</h2>
+    </div>
+    <div class="obi-grid">
+      <div class="obi-card">
+        <h3>Consulenza tecnica</h3>
+        <p>Una valida consulenza tecnica per individuare la soluzione più idonea a ogni esigenza, informando il cliente su ogni fase, dalla progettazione all'esecuzione.</p>
+      </div>
+      <div class="obi-card">
+        <h3>Controllo e sicurezza</h3>
+        <p>Totale controllo durante la lavorazione e sicurezza di una messa in opera a regola d'arte, da parte di personale qualificato e aggiornato.</p>
+      </div>
+      <div class="obi-card">
+        <h3>Crescita continua</h3>
+        <p>Nuove categorie SOA e classi più elevate, investimenti tecnologici e attenzione al risparmio energetico applicato all'edilizia, per servire meglio i clienti che ci accordano fiducia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lavora">
+  <div class="wrap">
+    <div class="job-layout">
+      <div class="job-side">
+        <div class="eyebrow">Lavora con noi</div>
+        <h2 class="h-title">Entra nel team Ignacchiti Francesco</h2>
+        <p style="margin-top:16px;">Siamo sempre alla ricerca di operai specializzati, autisti, tecnici e figure amministrative da inserire nel nostro organico. Inviaci i tuoi dati e il tuo curriculum: ti ricontatteremo per le posizioni in linea con il tuo profilo.</p>
+        <ul>
+          <li><b>Operai specializzati</b> — conducenti mezzi, asfaltisti, addetti agli impianti</li>
+          <li><b>Tecnici</b> — direzione lavori, sicurezza cantiere, geometri</li>
+          <li><b>Amministrativo / commerciale</b> — ufficio gare, contabilità, commerciale</li>
+        </ul>
+      </div>
+      <div class="job-form">
+        <form id="jobForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="jf-nome">Nome</label>
+              <input type="text" id="jf-nome" name="nome" required>
+            </div>
+            <div class="field">
+              <label for="jf-cognome">Cognome</label>
+              <input type="text" id="jf-cognome" name="cognome" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="jf-email">Email</label>
+              <input type="email" id="jf-email" name="email" required>
+            </div>
+            <div class="field">
+              <label for="jf-telefono">Telefono</label>
+              <input type="tel" id="jf-telefono" name="telefono" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="jf-ruolo">Posizione di interesse</label>
+            <select id="jf-ruolo" name="ruolo" required>
+              <option value="" disabled selected>Seleziona una posizione</option>
+              <option>Operaio specializzato / conducente mezzi</option>
+              <option>Tecnico / direzione lavori</option>
+              <option>Amministrativo / commerciale</option>
+              <option>Candidatura spontanea</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="jf-messaggio">Breve presentazione</label>
+            <textarea id="jf-messaggio" name="messaggio" placeholder="Esperienza, disponibilità, referenze..."></textarea>
+          </div>
+          <div class="privacy-row">
+            <input type="checkbox" id="jf-privacy" required>
+            <label for="jf-privacy">Acconsento al trattamento dei miei dati personali per finalità di selezione del personale, ai sensi del Regolamento UE 2016/679.</label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer;">Invia candidatura</button>
+          <p class="job-note">Il modulo apre il tuo programma di posta con i dati già inseriti: allega il tuo curriculum vitae all'email prima di inviarla.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contatti">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow">Contatti</div>
+        <h2 class="h-title">Parliamo del vostro progetto</h2>
+        <p style="color:var(--cemento-chiaro);margin-top:16px;max-width:440px;">Confidiamo di potervi annoverare fra i nostri clienti: restiamo a disposizione per un sopralluogo, un preventivo o maggiori informazioni sulle nostre lavorazioni.</p>
+        <div class="hero-cta" style="margin-top:32px;">
+          <a href="mailto:ignacchitisrl@gmail.com" class="btn btn-primary">Scrivici via email</a>
+          <a href="tel:+390973871685" class="btn btn-ghost">Chiamaci</a>
+        </div>
+      </div>
+      <div>
+        <div class="contact-block">
+          <h4>SEDE LEGALE</h4>
+          <p>Via Armando Diaz, 28 — 87028 Praia a Mare (CS), Italia</p>
+        </div>
+        <div class="contact-block">
+          <h4>SEDE OPERATIVA</h4>
+          <p>Loc. Melossina, SS.585 Km 2+200 — 85046 Maratea (PZ), Italia</p>
+        </div>
+        <div class="contact-block">
+          <h4>RECAPITI</h4>
+          <a href="tel:+390973871685">Tel. +39 0973 871685</a>
+          <a href="tel:+393298395830">Cell. +39 329 8395830</a>
+          <a href="mailto:ignacchitisrl@gmail.com">ignacchitisrl@gmail.com</a>
+          <a href="mailto:ignacchitifrancescosrl@pec.it">PEC: ignacchitifrancescosrl@pec.it</a>
+        </div>
+        <div class="contact-block">
+          <h4>DATI SOCIETARI</h4>
+          <p>Capitale sociale € 12.000,00 — P.IVA 02706310782</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>© 2026 Ignacchiti Francesco S.R.L. — Conglomerati cementizi e bituminosi</p>
+      <p>P.IVA 02706310782 · Praia a Mare (CS) · Maratea (PZ)</p>
+    </footer>
+  </div>
+</section>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function(){
+    document.getElementById('nav').classList.toggle('open');
+  });
+  document.querySelectorAll('nav a').forEach(function(a){
+    a.addEventListener('click', function(){document.getElementById('nav').classList.remove('open');});
+  });
+
+  document.getElementById('jobForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nome = document.getElementById('jf-nome').value;
+    var cognome = document.getElementById('jf-cognome').value;
+    var email = document.getElementById('jf-email').value;
+    var telefono = document.getElementById('jf-telefono').value;
+    var ruolo = document.getElementById('jf-ruolo').value;
+    var messaggio = document.getElementById('jf-messaggio').value;
+
+    var subject = 'Candidatura - ' + ruolo + ' - ' + nome + ' ' + cognome;
+    var body =
+      'Nome: ' + nome + '\n' +
+      'Cognome: ' + cognome + '\n' +
+      'Email: ' + email + '\n' +
+      'Telefono: ' + telefono + '\n' +
+      'Posizione: ' + ruolo + '\n\n' +
+      'Presentazione:\n' + messaggio + '\n\n' +
+      '(Ricordati di allegare il curriculum vitae a questa email prima di inviarla)';
+
+    var mailto = 'mailto:ignacchitisrl@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = mailto;
+  });
+</script>
+
+</body>
+</html>
